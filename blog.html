@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Fluent Minds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #0d3b38; --teal-mid: #1a5c57; --cream: #faf6ef; --cream-dark: #f0e9db;
+      --coral: #e05c3a; --coral-light: #f4a88a; --sage: #7aab8a; --sage-light: #b8d4bf;
+      --text: #1c2b29; --muted: #6b8280;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(250, 246, 239, 0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13,59,56,0.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 20px; height: 20px; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--teal); letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--coral); }
+    .nav-cta { background: var(--teal) !important; color: var(--cream) !important; padding: 0.55rem 1.4rem; border-radius: 100px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--coral) !important; }
+
+    /* HERO */
+    .page-hero {
+      padding: 9rem 4rem 5rem;
+      background: var(--teal);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero-inner { max-width: 700px; }
+    .page-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral-light); margin-bottom: 1rem; display: block; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .page-hero h1 em { font-style: italic; color: var(--coral-light); }
+    .page-hero p { color: var(--sage-light); font-size: 1rem; line-height: 1.75; max-width: 480px; }
+
+    /* FILTER TABS */
+    .filters {
+      display: flex; gap: 0.7rem; flex-wrap: wrap;
+      padding: 2.5rem 4rem 0;
+    }
+    .filter-btn {
+      border: 2px solid transparent;
+      background: white;
+      color: var(--teal);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .filter-btn:hover { border-color: var(--teal); }
+    .filter-btn.active { background: var(--teal); color: white; }
+
+    /* MAIN CONTENT */
+    .blog-main { padding: 2.5rem 4rem 6rem; }
+
+    /* FEATURED ROW */
+    .featured-row {
+      display: grid; grid-template-columns: 1.6fr 1fr;
+      gap: 2rem; margin-bottom: 3rem;
+    }
+    .blog-card-large {
+      border-radius: 24px; overflow: hidden;
+      background: white; box-shadow: 0 2px 24px rgba(13,59,56,0.07);
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .blog-card-large:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,59,56,0.14); }
+    .blog-card-large-img { height: 280px; display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; }
+    .blog-card-large-body { padding: 2rem; }
+    .cat-badge { display: inline-block; background: var(--coral); color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; margin-bottom: 0.8rem; }
+    .cat-badge.tech { background: var(--teal); }
+    .cat-badge.life { background: #8b5e3c; }
+    .cat-badge.edu { background: #3a6eb5; }
+    .cat-badge.mental { background: #7b5ea7; }
+    .blog-card-large h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--teal); line-height: 1.3; margin-bottom: 0.8rem; }
+    .blog-card-large p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .blog-card-meta { display: flex; gap: 1rem; align-items: center; margin-top: 1.2rem; font-size: 0.8rem; color: var(--muted); }
+    .blog-card-meta-read { color: var(--coral); font-weight: 600; margin-left: auto; }
+
+    /* SIDE STACK */
+    .side-stack { display: flex; flex-direction: column; gap: 1.2rem; }
+    .blog-card-small {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 1rem; padding: 1.2rem;
+      border-radius: 16px; background: white;
+      box-shadow: 0 2px 12px rgba(13,59,56,0.06);
+      text-decoration: none; color: inherit;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+    .blog-card-small:hover { transform: translateX(4px); }
+    .blog-card-small-img { height: 70px; width: 80px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+    .blog-card-small h4 { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 700; color: var(--teal); line-height: 1.4; margin-bottom: 0.3rem; }
+    .blog-card-small-meta { font-size: 0.75rem; color: var(--muted); }
+
+    /* FULL GRID */
+    .grid-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--teal); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .grid-title em { font-style: italic; color: var(--coral); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+    .blog-card {
+      border-radius: 20px; overflow: hidden; background: white;
+      box-shadow: 0 2px 24px rgba(13,59,56,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+    }
+    .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(13,59,56,0.14); }
+    .blog-card-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; }
+    .blog-card-body { padding: 1.4rem 1.4rem 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .blog-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); line-height: 1.4; margin-bottom: 0.7rem; }
+    .blog-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .blog-card-read { margin-top: 1rem; font-size: 0.8rem; font-weight: 600; color: var(--coral); display: flex; align-items: center; gap: 0.4rem; }
+    .blog-card-read::after { content: '→'; transition: transform 0.2s; }
+    .blog-card:hover .blog-card-read::after { transform: translateX(4px); }
+    .read-more-wrap { text-align: center; margin-top: 3rem; }
+    .btn-outline { border: 2px solid var(--teal); color: var(--teal); padding: 0.85rem 2rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+    .btn-outline:hover { background: var(--teal); color: var(--cream); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; }
+      .nav-links { display: none; }
+      .page-hero, .filters, .blog-main { padding-left: 2rem; padding-right: 2rem; }
+      .featured-row { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#faf6ef" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h2l2-4 2 8 2-4h2"/></svg></div>
+    <span class="nav-logo-text">Fluent Minds</span>
+  </a>
+  <div class="nav-links">
+    <a href="blog.html" class="active">Blog</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-tag">Knowledge & Insight</span>
+    <h1>Articles to help you<br /><em>speak with confidence</em></h1>
+    <p>Evidence-based guides, personal stories, and practical techniques — all crafted to support students who stutter on their journey to confident expression.</p>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterPosts('all', this)">All Articles</button>
+  <button class="filter-btn" onclick="filterPosts('techniques', this)">Techniques</button>
+  <button class="filter-btn" onclick="filterPosts('daily', this)">Daily Life</button>
+  <button class="filter-btn" onclick="filterPosts('research', this)">Research</button>
+  <button class="filter-btn" onclick="filterPosts('confidence', this)">Confidence</button>
+  <button class="filter-btn" onclick="filterPosts('mental', this)">Mental Health</button>
+</div>
+
+<div class="blog-main">
+  <!-- FEATURED -->
+  <div class="featured-row">
+    <a href="#" class="blog-card-large">
+      <div class="blog-card-large-img" style="background: linear-gradient(135deg,#d4e8e0,#7aab8a);">🧠</div>
+      <div class="blog-card-large-body">
+        <span class="cat-badge">Confidence</span>
+        <h2>The Science of Confident Speaking: How to Rewire Your Brain for Fluency</h2>
+        <p>Recent research shows that stuttering is a neurological difference, not a psychological weakness. Learn how cognitive reframing and daily vocal exercises can transform how you communicate — starting today.</p>
+        <div class="blog-card-meta">
+          <span>January 5, 2025</span>
+          <span>·</span>
+          <span>8 min read</span>
+          <span class="blog-card-meta-read">Read Article →</span>
+        </div>
+      </div>
+    </a>
+    <div class="side-stack">
+      <a href="#" class="blog-card-small">
+        <div class="blog-card-small-img" style="background:#e8f4ea;">🗣️</div>
+        <div>
+          <span class="cat-badge tech" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Techniques</span>
+          <h4>5 Breathing Exercises That Reduce Stuttering</h4>
+          <div class="blog-card-small-meta">Dec 10, 2024 · 5 min</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card-small">
+        <div class="blog-card-small-img" style="background:#fdf0e8;">💼</div>
+        <div>
+          <span class="cat-badge life" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Daily Life</span>
+          <h4>How to Handle Job Interviews When You Stutter</h4>
+          <div class="blog-card-small-meta">Nov 28, 2024 · 6 min</div>
+        </div>
+      </a>
+      <a href="#" class="blog-card-small">
+        <div class="blog-card-small-img" style="background:#e8eef8;">📚</div>
+        <div>
+          <span class="cat-badge edu" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Research</span>
+          <h4>Understanding Stuttering: Causes, Myths & Facts</h4>
+          <div class="blog-card-small-meta">Nov 15, 2024 · 10 min</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <h2 class="grid-title">All <em>Articles</em></h2>
+  <div class="blog-grid" id="blogGrid">
+    <a href="#" class="blog-card" data-cat="techniques">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#e8f4ea,#b8d4bf);">🌬️</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge tech" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Techniques</span> · Dec 10</div>
+        <h3>5 Breathing Exercises That Reduce Stuttering in Minutes</h3>
+        <p>Controlled diaphragmatic breathing is one of the most accessible tools for managing blocks and improving fluency.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="daily">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#fdf0e8,#f4c4a0);">💬</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge life" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Daily Life</span> · Nov 28</div>
+        <h3>How to Handle Job Interviews When You Stutter</h3>
+        <p>Preparation, disclosure strategies, and mindset shifts to show your best self regardless of fluency.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="research">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#e8eef8,#b0c4e8);">📖</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge edu" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Research</span> · Nov 15</div>
+        <h3>Understanding Stuttering: Causes, Myths & Modern Research</h3>
+        <p>What science actually says about the origins of stuttering and why most "cures" are myths.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="confidence">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#fce8e8,#f4a8a8);">🎤</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Confidence</span> · Nov 3</div>
+        <h3>Public Speaking With a Stutter: How to Own the Room</h3>
+        <p>Famous communicators who stutter — and the strategies they use to captivate audiences every time.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="mental">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#ece8f8,#c4b0e8);">🧘</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge mental" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Mental Health</span> · Oct 22</div>
+        <h3>The Anxiety Loop: Breaking the Stutter–Fear Cycle</h3>
+        <p>How anticipatory anxiety worsens stuttering — and evidence-based ways to interrupt the cycle.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="techniques">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#e8f8ec,#a8e8b4);">🔄</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge tech" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Techniques</span> · Oct 10</div>
+        <h3>The Voluntary Stuttering Technique Explained</h3>
+        <p>Counterintuitive but powerful: learn why intentionally stuttering can reduce fear and improve fluency.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="daily">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#f8f0e0,#e8d098);">🏫</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge life" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Daily Life</span> · Sep 28</div>
+        <h3>Navigating School as a Student Who Stutters</h3>
+        <p>Tips for class participation, presentations, and building relationships — without hiding who you are.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="research">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#e0f0f8,#98c8e8);">🔬</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge edu" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Research</span> · Sep 14</div>
+        <h3>What Neuroimaging Studies Tell Us About Stuttering</h3>
+        <p>Brain scans reveal fascinating differences in how people who stutter process speech — and what it means.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+    <a href="#" class="blog-card" data-cat="confidence">
+      <div class="blog-card-img" style="background: linear-gradient(135deg,#f8e8f0,#e8a8c8);">💪</div>
+      <div class="blog-card-body">
+        <div class="blog-card-date"><span class="cat-badge" style="font-size:0.65rem;padding:0.2rem 0.6rem;">Confidence</span> · Sep 2</div>
+        <h3>10 Affirmations for People Who Stutter (That Actually Work)</h3>
+        <p>Words of self-compassion grounded in psychology — not toxic positivity — to rebuild your relationship with your voice.</p>
+        <span class="blog-card-read">Read Article</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="read-more-wrap">
+    <a href="#" class="btn-outline">Load More Articles</a>
+  </div>
+</div>
+
+<footer style="background:#0d3b38;color:#faf6ef;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+  <span>© 2025 Fluent Minds</span>
+  <a href="index.html" style="color:#7aab8a;text-decoration:none;">← Back to Home</a>
+</footer>
+
+<script>
+  function filterPosts(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#blogGrid .blog-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.blog-card, .blog-card-large, .blog-card-small').forEach(el => {
+    el.style.opacity = '0'; el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Fluent Minds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --teal: #0d3b38; --teal-mid: #1a5c57; --cream: #faf6ef; --cream-dark: #f0e9db; --coral: #e05c3a; --coral-light: #f4a88a; --sage: #7aab8a; --sage-light: #b8d4bf; --text: #1c2b29; --muted: #6b8280; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(250,246,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,59,56,0.08); }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 20px; height: 20px; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--teal); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--coral); }
+    .nav-cta { background: var(--teal) !important; color: var(--cream) !important; padding: 0.55rem 1.4rem; border-radius: 100px; }
+
+    .page-hero { padding: 9rem 4rem 5rem; background: var(--teal); position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
+    .page-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral-light); margin-bottom: 1rem; display: block; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; color: var(--cream); line-height: 1.15; margin-bottom: 1rem; }
+    .page-hero h1 em { font-style: italic; color: var(--coral-light); }
+    .page-hero p { color: var(--sage-light); font-size: 1rem; line-height: 1.75; max-width: 480px; }
+
+    .contact-main { padding: 5rem 4rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--teal); margin-bottom: 1rem; }
+    .contact-info p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 2rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+    .contact-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(13,59,56,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .contact-item-text strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--teal); margin-bottom: 0.2rem; }
+    .contact-item-text span { font-size: 0.85rem; color: var(--muted); }
+
+    .contact-form-wrap { background: white; border-radius: 24px; padding: 2.5rem; box-shadow: 0 4px 32px rgba(13,59,56,0.08); }
+    .contact-form-wrap h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; color: var(--teal); margin-bottom: 1.8rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--teal); letter-spacing: 0.02em; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.75rem 1rem; border-radius: 10px;
+      border: 2px solid rgba(13,59,56,0.1);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      color: var(--text); background: var(--cream);
+      outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .btn-submit { width: 100%; background: var(--teal); color: white; border: none; padding: 1rem 2rem; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .btn-submit:hover { background: var(--coral); transform: translateY(-2px); }
+    .success-msg { display: none; background: #e8f4ea; border: 1px solid var(--sage); border-radius: 10px; padding: 1rem 1.4rem; color: var(--teal-mid); font-size: 0.9rem; margin-top: 1rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; } .nav-links { display: none; }
+      .page-hero { padding: 8rem 2rem 4rem; }
+      .contact-main { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#faf6ef" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h2l2-4 2 8 2-4h2"/></svg></div>
+    <span class="nav-logo-text">Fluent Minds</span>
+  </a>
+  <div class="nav-links">
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="blog.html" class="nav-cta">Read Articles</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="page-tag">Get in Touch</span>
+  <h1>We'd love to<br /><em>hear from you</em></h1>
+  <p>Whether you want to share your story, contribute an article, ask for resources, or just say hello — we're here.</p>
+</div>
+
+<div class="contact-main">
+  <div class="contact-info">
+    <h2>Let's connect</h2>
+    <p>Fluent Minds is a small, passionate team. We personally read every message and respond within a few days.</p>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-item-text">
+        <strong>Email</strong>
+        <span>hello@fluentminds.org</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-item-text">
+        <strong>Based in</strong>
+        <span>Dhaka, Bangladesh</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-item-text">
+        <strong>Response time</strong>
+        <span>Usually within 2–3 business days</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✍️</div>
+      <div class="contact-item-text">
+        <strong>Want to write for us?</strong>
+        <span>We welcome guest articles from students, therapists, and allies. Use the form and select "Contribute an Article."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap">
+    <h3>Send us a message</h3>
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Your first name" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Your last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option value="">— Select a topic —</option>
+          <option>General Inquiry</option>
+          <option>Share My Story</option>
+          <option>Contribute an Article</option>
+          <option>Request a Resource</option>
+          <option>Feedback or Suggestion</option>
+          <option>Partnership or Collaboration</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message here..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message →</button>
+      <div class="success-msg" id="successMsg">✓ Thank you! Your message has been received. We'll get back to you soon.</div>
+    </form>
+  </div>
+</div>
+
+<footer style="background:#0d3b38;color:#faf6ef;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+  <span>© 2025 Fluent Minds</span>
+  <a href="index.html" style="color:#7aab8a;text-decoration:none;">← Back to Home</a>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('successMsg').style.display = 'block';
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

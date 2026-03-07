@@ -1,0 +1,12 @@
+<!-- Paste this just before </body> in index.html and all pages for Netlify Identity to work -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
