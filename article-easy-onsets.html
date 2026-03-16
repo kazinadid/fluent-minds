@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Onsets: How to Start Words Without Blocking — Fluent Minds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #0d3b38; --teal-mid: #1a5c57; --cream: #faf6ef; --cream-dark: #f0e9db;
+      --coral: #e05c3a; --coral-light: #f4a88a; --sage: #7aab8a; --sage-light: #b8d4bf;
+      --text: #1c2b29; --muted: #6b8280;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(250,246,239,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,59,56,0.08); }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 20px; height: 20px; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--teal); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta { background: var(--teal) !important; color: var(--cream) !important; padding: 0.55rem 1.4rem; border-radius: 100px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--coral) !important; }
+
+    /* ARTICLE HERO */
+    .article-hero {
+      padding: 8rem 4rem 4rem;
+      background: var(--teal);
+      position: relative; overflow: hidden;
+    }
+    .article-hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60px; background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .breadcrumb {
+      display: flex; gap: 0.5rem; align-items: center;
+      font-size: 0.8rem; color: var(--sage-light);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--sage-light); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--coral-light); }
+    .breadcrumb span { opacity: 0.5; }
+    .article-cat {
+      display: inline-block; background: var(--coral);
+      color: white; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.9rem; border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: var(--cream);
+      line-height: 1.2; letter-spacing: -0.02em;
+      max-width: 720px; margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--coral-light); }
+    .article-meta {
+      display: flex; gap: 1.5rem; align-items: center;
+      font-size: 0.82rem; color: var(--sage-light);
+    }
+    .article-meta-dot { opacity: 0.4; }
+
+    /* LAYOUT */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 4rem 6rem;
+      align-items: start;
+    }
+
+    /* MAIN ARTICLE CONTENT */
+    .article-body { max-width: 700px; }
+    .article-intro {
+      font-size: 1.1rem; line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 2px solid var(--cream-dark);
+      font-weight: 400;
+    }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 800;
+      color: var(--teal);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .article-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--teal); margin: 2rem 0 0.7rem;
+    }
+    .article-body p {
+      font-size: 0.97rem; line-height: 1.85;
+      color: #3a4f4d; margin-bottom: 1.2rem;
+    }
+    .article-body strong { color: var(--teal); font-weight: 600; }
+    .article-body em { font-style: italic; }
+
+    /* CALLOUT BOXES */
+    .callout {
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .callout-info { background: #e8f4ea; border-left: 4px solid var(--sage); }
+    .callout-tip { background: rgba(224,92,58,0.08); border-left: 4px solid var(--coral); }
+    .callout-science { background: rgba(13,59,56,0.06); border-left: 4px solid var(--teal); }
+    .callout-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .callout-info .callout-label { color: #2a7a4a; }
+    .callout-tip .callout-label { color: var(--coral); }
+    .callout-science .callout-label { color: var(--teal); }
+    .callout p { font-size: 0.9rem !important; margin-bottom: 0 !important; color: var(--text) !important; }
+
+    /* EXERCISE STEPS */
+    .exercise-box {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 24px rgba(13,59,56,0.08);
+    }
+    .exercise-box-title {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--teal); margin-bottom: 1.2rem;
+    }
+    .exercise-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--teal); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-list { list-style: none; }
+    .step-list li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(13,59,56,0.06);
+      font-size: 0.93rem; line-height: 1.7; color: var(--text);
+    }
+    .step-list li:last-child { border-bottom: none; }
+    .step-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--coral); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* WORD EXAMPLES LIST */
+    .example-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem; margin: 1.2rem 0;
+    }
+    .example-word {
+      background: white;
+      border: 2px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--teal);
+    }
+    .example-word span {
+      display: block; font-size: 0.75rem;
+      color: var(--coral); font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* PHRASE PRACTICE */
+    .phrase-list {
+      list-style: none; margin: 1rem 0;
+    }
+    .phrase-list li {
+      padding: 0.7rem 1rem;
+      background: white;
+      border-radius: 10px;
+      border-left: 3px solid var(--sage);
+      font-size: 0.9rem; color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .phrase-list li em { color: var(--coral); font-style: normal; font-weight: 600; }
+
+    /* AUDIO DEMO VISUAL */
+    .audio-demo {
+      background: var(--teal);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      margin: 1.5rem 0;
+      color: var(--cream);
+    }
+    .audio-icon { font-size: 1.8rem; }
+    .audio-label { font-size: 0.82rem; color: var(--sage-light); margin-bottom: 0.3rem; }
+    .audio-word { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; }
+
+    /* QUOTE */
+    blockquote {
+      background: var(--cream-dark);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    blockquote::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; line-height: 1;
+      color: var(--sage-light);
+      position: absolute; top: 0; left: 1rem;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 1.1rem !important; font-style: italic;
+      padding-top: 1.5rem;
+      color: var(--teal) !important;
+      margin-bottom: 0.5rem !important;
+    }
+    blockquote cite { font-size: 0.8rem; color: var(--muted); }
+
+    /* REFERENCES */
+    .references {
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 2px solid var(--cream-dark);
+    }
+    .references h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .references p { font-size: 0.82rem !important; color: var(--muted) !important; line-height: 1.6 !important; margin-bottom: 0.5rem !important; }
+
+    /* SIDEBAR */
+    .article-sidebar { position: sticky; top: 6rem; }
+    .sidebar-card {
+      background: white; border-radius: 20px;
+      padding: 1.5rem; box-shadow: 0 2px 20px rgba(13,59,56,0.07);
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--teal); margin-bottom: 1rem;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 0.5rem; }
+    .toc-list a {
+      font-size: 0.83rem; color: var(--muted);
+      text-decoration: none; line-height: 1.4;
+      transition: color 0.2s;
+      display: flex; gap: 0.5rem; align-items: flex-start;
+    }
+    .toc-list a::before { content: '→'; color: var(--coral); flex-shrink: 0; font-size: 0.75rem; margin-top: 1px; }
+    .toc-list a:hover { color: var(--teal); }
+    .related-post {
+      display: flex; gap: 0.8rem; align-items: center;
+      text-decoration: none; color: inherit;
+      padding: 0.8rem 0; border-bottom: 1px solid var(--cream-dark);
+      transition: transform 0.2s;
+    }
+    .related-post:last-child { border-bottom: none; }
+    .related-post:hover { transform: translateX(4px); }
+    .related-thumb { width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .related-post h5 { font-size: 0.82rem; font-weight: 600; color: var(--teal); line-height: 1.4; }
+    .related-post span { font-size: 0.72rem; color: var(--muted); }
+
+    /* NEXT ARTICLE NAV */
+    .article-nav {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 4rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .article-nav-card {
+      background: white; border-radius: 20px;
+      padding: 1.5rem; text-decoration: none; color: inherit;
+      box-shadow: 0 2px 16px rgba(13,59,56,0.06);
+      transition: transform 0.2s;
+    }
+    .article-nav-card:hover { transform: translateY(-3px); }
+    .article-nav-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
+    .article-nav-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--teal); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; } .nav-links { display: none; }
+      .article-hero { padding: 7rem 2rem 3rem; }
+      .article-layout { grid-template-columns: 1fr; padding: 3rem 2rem; }
+      .article-sidebar { display: none; }
+      .example-grid { grid-template-columns: 1fr 1fr; }
+      .article-nav { grid-template-columns: 1fr; padding: 0 2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#faf6ef" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h2l2-4 2 8 2-4h2"/></svg></div>
+    <span class="nav-logo-text">Fluent Minds</span>
+  </a>
+  <div class="nav-links">
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html" class="nav-cta">All Articles</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <a href="blog.html">Blog</a>
+    <span>›</span>
+    <span>Easy Onsets</span>
+  </div>
+  <span class="article-cat">Techniques</span>
+  <h1>Easy Onsets: How to Start Words <em>Without Blocking</em></h1>
+  <div class="article-meta">
+    <span>Fluent Minds</span>
+    <span class="article-meta-dot">·</span>
+    <span>January 12, 2025</span>
+    <span class="article-meta-dot">·</span>
+    <span>7 min read</span>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article class="article-body">
+
+    <p class="article-intro">
+      Easy onsets — also called <strong>gentle voice onsets</strong> — are one of the most effective fluency techniques for people who stutter on vowel sounds at the start of words. Instead of trying to "push through" a block, you learn to initiate your voice gradually, which prevents the tension that causes the stutter in the first place.
+    </p>
+
+    <div class="callout callout-science">
+      <div class="callout-label">📖 What the research says</div>
+      <p>Easy onset speech refers to the slow initiation of vocal fold vibration (Max & Caruso, 1997). Sudden or forceful vocal fold movement is a key contributor to stuttering on words that begin with vowels — easy onsets address this directly at the source.</p>
+    </div>
+
+    <h2 id="why">Why Do We Block on Vowels?</h2>
+    <p>When you speak, your vocal folds (the two small muscle folds in your larynx) vibrate together to produce voiced sounds. Most consonants give the vocal folds a gentle "run-up" — for example, the sound <strong>/s/</strong> in "sorry" is voiceless, so by the time the vocal folds need to vibrate for the vowel that follows, they're already in motion.</p>
+    <p>Vowel sounds at the start of words don't have that advantage. The vocal folds go from a fully closed, resting position to suddenly needing to vibrate — all at once. For people who stutter, this abrupt demand creates excess tension and can trigger a block or repetition.</p>
+    <p><strong>Easy onsets solve this</strong> by teaching you to start with a tiny breath of air (a quiet "h" sound) before turning on your voice. This gives the vocal folds a gentle, gradual start instead of a sudden jolt.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-label">💡 Quick check</div>
+      <p>Place your fingers lightly on your voice box (Adam's apple area) and say a long "ahhhh." You'll feel the vibration. Now say "after" — notice how your voice folds must "switch on" immediately. That abrupt switch is what easy onsets help you manage.</p>
+    </div>
+
+    <h2 id="exercises">Step-by-Step Exercises</h2>
+    <p>Work through these three stages in order. Don't rush — spend at least a few days on each stage before moving to the next.</p>
+
+    <div class="exercise-box">
+      <div class="exercise-box-title"><div class="exercise-num">1</div> Start with Vowel Sounds Alone</div>
+      <ul class="step-list">
+        <li><div class="step-num">1</div> Breathe out with a quiet, relaxed sigh. You should hear a soft <strong>"hhhhh"</strong> sound — not harsh, just a gentle breath. Your voice is not yet "on."</li>
+        <li><div class="step-num">2</div> While still exhaling, gradually turn on your voice to produce a vowel sound. It should sound like <strong>"hhhhheee"</strong> — the voice fades in slowly.</li>
+        <li><div class="step-num">3</div> The key is that the "h" before the vowel is stretched and audible. This is exaggerated on purpose — you'll refine it later.</li>
+        <li><div class="step-num">4</div> Practice with each of these vowel sounds: <strong>ay, ah, ee, oh, oo, ow</strong></li>
+      </ul>
+    </div>
+
+    <div class="exercise-box">
+      <div class="exercise-box-title"><div class="exercise-num">2</div> Apply to Single Words</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Now apply the same technique to individual words starting with vowels. The word begins with a quiet breath-h, then the voice turns on gradually.</p>
+      <div class="example-grid">
+        <div class="example-word">Anna<span>→ "hhhh-anna"</span></div>
+        <div class="example-word">After<span>→ "hhhh-after"</span></div>
+        <div class="example-word">Always<span>→ "hhhh-always"</span></div>
+        <div class="example-word">Enough<span>→ "hhhh-enough"</span></div>
+        <div class="example-word">Email<span>→ "hhhh-email"</span></div>
+        <div class="example-word">Either<span>→ "hhhh-either"</span></div>
+        <div class="example-word">Inside<span>→ "hhhh-inside"</span></div>
+        <div class="example-word">Open<span>→ "hhhh-open"</span></div>
+        <div class="example-word">Uncle<span>→ "hhhh-uncle"</span></div>
+        <div class="example-word">Update<span>→ "hhhh-update"</span></div>
+        <div class="example-word">Offer<span>→ "hhhh-offer"</span></div>
+        <div class="example-word">Expert<span>→ "hhhh-expert"</span></div>
+      </div>
+      <div class="callout callout-tip" style="margin-top:1rem;">
+        <div class="callout-label">💡 Tip</div>
+        <p>Record yourself on your phone and listen back. Check that you can clearly hear the gentle "h" before the vowel. If the onset sounds hard or abrupt, slow it down more.</p>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <div class="exercise-box-title"><div class="exercise-num">3</div> Practice Full Phrases</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Now move to phrases. Apply the easy onset to the first word of each phrase. The rest of the sentence can be spoken normally.</p>
+      <ul class="phrase-list">
+        <li><em>"hhhhhExcuse me…"</em> — then continue naturally</li>
+        <li><em>"hhhhhOf course."</em></li>
+        <li><em>"hhhhhAfter you."</em></li>
+        <li><em>"hhhhhIt's a good day."</em></li>
+        <li><em>"hhhhhAre you busy?"</em></li>
+        <li><em>"hhhhhI'll see you later."</em></li>
+        <li><em>"hhhhhOpen the door, please."</em></li>
+        <li><em>"hhhhhIs this okay?"</em></li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--muted);margin-top:1rem;">Also write your own! Think of phrases you say every day that start with vowels — especially ones where you know you sometimes block.</p>
+    </div>
+
+    <h2 id="refine">Making It Less Noticeable</h2>
+    <p>At first, your easy onset will be very exaggerated — a long, obvious "hhhh" before every vowel. That's intentional. Once you're comfortable with the technique, you can start reducing the length and volume of the "h" sound.</p>
+    <p>The goal is to keep just enough of the breath-onset to prevent the hard start, while making it quiet enough that most listeners won't notice. Think of it as a very brief exhale — almost like a tiny, silent sigh — that you slip in before the vowel.</p>
+
+    <div class="callout callout-info">
+      <div class="callout-label">✅ Practice approach</div>
+      <p>Record yourself each practice session. Compare your early recordings (exaggerated onset) to your recent ones (refined onset). Hearing your own progress is one of the most motivating tools available.</p>
+    </div>
+
+    <h2 id="relate">How This Relates to Other Techniques</h2>
+    <p>Easy onsets are often taught alongside <strong>soft contacts</strong> — a similar technique for consonant sounds. Where easy onsets handle vowel-initial words, soft contacts handle words starting with consonants like "p," "b," or "t" — sounds that require the lips or tongue to make firm contact and then release.</p>
+    <p>Together, these two techniques cover almost every word in the language. Many speech therapists teach them as a pair for this reason.</p>
+
+    <blockquote>
+      <p>The goal is not to eliminate your stutter — it's to remove the fear and tension that make it worse. Easy onsets give your voice a safe way to begin.</p>
+      <cite>— Fluent Minds Editorial Team</cite>
+    </blockquote>
+
+    <h2 id="summary">Summary</h2>
+    <p>Easy onsets work by replacing a sudden, tense vocal onset with a gradual, breath-initiated one. They're most useful for words and phrases that begin with vowel sounds. With regular practice — even just 10 minutes a day — most people notice a real reduction in blocks on vowel-initial words within a few weeks.</p>
+    <p>The three stages are: <strong>(1)</strong> practice with isolated vowel sounds, <strong>(2)</strong> apply to single words, <strong>(3)</strong> extend to full phrases. Once you're confident, gradually reduce the exaggeration until the technique becomes natural and nearly invisible.</p>
+
+    <div class="references">
+      <h4>References</h4>
+      <p>Max, L. & Caruso, A. J. (1997). Contemporary techniques for establishing fluency in the treatment of adults who stutter. <em>Contemporary Issues in Communication Science and Disorders, 24</em>, 45–52.</p>
+    </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <h4>In This Article</h4>
+      <ul class="toc-list">
+        <li><a href="#why">Why We Block on Vowels</a></li>
+        <li><a href="#exercises">Step-by-Step Exercises</a></li>
+        <li><a href="#refine">Making It Less Noticeable</a></li>
+        <li><a href="#relate">Related Techniques</a></li>
+        <li><a href="#summary">Summary</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Related Articles</h4>
+      <a href="article-breathing.html" class="related-post">
+        <div class="related-thumb" style="background:#e8f4ea;">🌬️</div>
+        <div><h5>5 Breathing Exercises That Reduce Stuttering</h5><span>Techniques · 5 min</span></div>
+      </a>
+      <a href="article-voluntary-stuttering.html" class="related-post">
+        <div class="related-thumb" style="background:#fdf0e8;">🔄</div>
+        <div><h5>Voluntary Stuttering Explained</h5><span>Techniques · 6 min</span></div>
+      </a>
+      <a href="blog.html" class="related-post">
+        <div class="related-thumb" style="background:#ece8f8;">🧠</div>
+        <div><h5>Breaking the Anxiety-Stutter Loop</h5><span>Mental Health · 7 min</span></div>
+      </a>
+    </div>
+    <div class="sidebar-card" style="background:var(--teal);color:var(--cream);">
+      <h4 style="color:var(--cream);">Weekly articles in your inbox</h4>
+      <p style="font-size:0.82rem;color:var(--sage-light);margin:0.5rem 0 1rem;">New techniques and guides every week — free.</p>
+      <input type="email" placeholder="Your email" style="width:100%;padding:0.6rem 1rem;border-radius:100px;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;background:rgba(255,255,255,0.12);color:white;outline:none;margin-bottom:0.6rem;" />
+      <button style="width:100%;background:var(--coral);color:white;border:none;padding:0.65rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.85rem;cursor:pointer;">Subscribe</button>
+    </div>
+  </aside>
+</div>
+
+<!-- NEXT/PREV NAV -->
+<div class="article-nav">
+  <a href="article-breathing.html" class="article-nav-card">
+    <div class="article-nav-label">Next Article →</div>
+    <h4>5 Breathing Exercises That Reduce Stuttering in Minutes</h4>
+  </a>
+  <a href="article-voluntary-stuttering.html" class="article-nav-card" style="text-align:right;">
+    <div class="article-nav-label">Also Read →</div>
+    <h4>The Voluntary Stuttering Technique Explained</h4>
+  </a>
+</div>
+
+<footer style="background:#0d3b38;color:#faf6ef;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+  <span>© 2025 Fluent Minds</span>
+  <a href="blog.html" style="color:#7aab8a;text-decoration:none;">← Back to Blog</a>
+</footer>
+
+</body>
+</html>
