@@ -60,21 +60,25 @@
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <nav>
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#faf6ef" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h2l2-4 2 8 2-4h2"/></svg></div>
     <span class="nav-logo-text">Fluent Minds</span>
   </a>
   <div class="nav-links">
+<a href="daily-practice.html">Practice</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="resources.html">Resources</a>
     <a href="contact.html" class="active">Contact</a>
     <a href="blog.html" class="nav-cta">Read Articles</a>
   </div>
-</nav>
+</nav><main id="main-content" tabindex="-1">
 
 <div class="page-hero">
   <span class="page-tag">Get in Touch</span>
@@ -158,17 +162,12 @@
   </div>
 </div>
 
+</main>
 <footer style="background:#0d3b38;color:#faf6ef;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
-  <span>© 2025 Fluent Minds</span>
+  <span>© 2026 Fluent Minds</span>
   <a href="index.html" style="color:#7aab8a;text-decoration:none;">← Back to Home</a>
 </footer>
 
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('successMsg').style.display = 'block';
-    e.target.reset();
-  }
-</script>
+
 </body>
 </html>
