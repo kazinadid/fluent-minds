@@ -534,8 +534,11 @@
       .newsletter-form { flex-direction: column; }
     }
   </style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- NAV -->
 <nav>
@@ -549,13 +552,14 @@
     <span class="nav-logo-text">Fluent Minds</span>
   </a>
   <div class="nav-links">
+<a href="daily-practice.html">Practice</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="resources.html">Resources</a>
     <a href="contact.html">Contact</a>
     <a href="blog.html" class="nav-cta">Read Articles</a>
   </div>
-</nav>
+</nav><main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -565,7 +569,7 @@
     <p class="fade-up delay-2">Fluent Minds is a community-driven initiative providing guidance, strategies, and confidence-building resources for students who stutter — helping you speak boldly and live fully.</p>
     <div class="hero-btns fade-up delay-3">
       <a href="blog.html" class="btn-primary">Explore Articles</a>
-      <a href="about.html" class="btn-outline">Our Mission</a>
+      <a href="resources.html" class="btn-outline">Free downloads</a>
     </div>
   </div>
   <div class="hero-right fade-up delay-2">
@@ -610,8 +614,8 @@
   <a href="article-breathing.html" class="featured-post">
     <div>
       <span class="featured-tag">★ Editor's Pick · Techniques</span>
-      <h2>5 Breathing Exercises That Reduce Stuttering in Minutes</h2>
-      <p>Controlled diaphragmatic breathing is one of the most accessible tools for managing stuttering. From belly breathing to the 4-7-8 technique — five exercises you can start today, no equipment needed.</p>
+      <h2>5 Breathing Exercises for Relaxation</h2>
+      <p>Explore breathing as a relaxation option, with guidance on comfort and limits. Breathing exercises are not a treatment for stuttering on their own.</p>
       <span class="btn-primary" style="display:inline-block;">Read Full Article</span>
     </div>
     <div class="featured-visual">🌬️</div>
@@ -626,7 +630,7 @@
       </div>
       <div class="blog-card-body">
         <div class="blog-card-date">December 10, 2024</div>
-        <h3>5 Breathing Exercises That Reduce Stuttering in Minutes</h3>
+        <h3>5 Breathing Exercises for Relaxation</h3>
         <p>Controlled diaphragmatic breathing is one of the most accessible tools for managing blocks. Here's a practical guide you can start today.</p>
         <span class="blog-card-read">Read Article</span>
       </div>
@@ -650,8 +654,8 @@
       </div>
       <div class="blog-card-body">
         <div class="blog-card-date">January 12, 2025</div>
-        <h3>Easy Onsets: How to Start Words Without Blocking</h3>
-        <p>Learn to initiate vowel sounds gradually — eliminating the hard starts that trigger blocks at the beginning of words.</p>
+        <h3>Easy Onsets: Exploring a Gentler Start</h3>
+        <p>Learn to initiate vowel sounds gradually — an approach to explore with a speech-language therapist.</p>
         <span class="blog-card-read">Read Article</span>
       </div>
     </a>
@@ -734,20 +738,8 @@
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="section" style="padding-top:0;">
-  <div class="newsletter">
-    <h2>Get weekly insights in your inbox</h2>
-    <p>New articles on stuttering management, confidence building & communication — every week.</p>
-    <form class="newsletter-form" onsubmit="handleSubscribe(event)">
-      <input type="email" placeholder="Your email address" required id="emailInput" />
-      <button type="submit">Subscribe</button>
-    </form>
-    <p id="subscribe-msg" style="color:#7aab8a;margin-top:1rem;font-size:0.9rem;display:none;">✓ Thank you for subscribing!</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<section class="section" style="padding-top:0"><div class="newsletter"><h2>Something useful for your next conversation</h2><p>Start with a small speaking plan, prepare for a presentation, or share listening tips with someone you trust.</p><a href="daily-practice.html" class="btn-primary">Make a speaking plan</a> <a href="resources.html" class="btn-outline">Free downloads</a></div></section><!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -778,17 +770,12 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Fluent Minds. Founded in Bangladesh.</span>
+    <span>© 2026 Fluent Minds. Founded in Bangladesh.</span>
     <span>Built with ❤️ for every voice that deserves to be heard.</span>
   </div>
 </footer>
 
 <script>
-  function handleSubscribe(e) {
-    e.preventDefault();
-    document.getElementById('subscribe-msg').style.display = 'block';
-    document.getElementById('emailInput').value = '';
-  }
 
   // Scroll-triggered fade-in
   const observer = new IntersectionObserver((entries) => {

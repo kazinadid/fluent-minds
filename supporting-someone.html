@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Practical ways to make conversations more welcoming."><title>Give every voice time — Fluent Minds</title><link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --teal: #0d3b38; --teal-mid: #1a5c57; --cream: #faf6ef; --cream-dark: #f0e9db; --coral: #e05c3a; --coral-light: #f4a88a; --sage: #7aab8a; --sage-light: #b8d4bf; --text: #1c2b29; --muted: #6b8280; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(250,246,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,59,56,0.08); }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 20px; height: 20px; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--teal); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--coral); }
+    .nav-cta { background: var(--teal) !important; color: var(--cream) !important; padding: 0.55rem 1.4rem; border-radius: 100px; }
+
+    .page-hero { padding: 9rem 4rem 5rem; background: var(--teal); position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
+    .page-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral-light); margin-bottom: 1rem; display: block; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; color: var(--cream); line-height: 1.15; margin-bottom: 1rem; }
+    .page-hero h1 em { font-style: italic; color: var(--coral-light); }
+    .page-hero p { color: var(--sage-light); font-size: 1rem; line-height: 1.75; max-width: 480px; }
+
+    .resources-main { padding: 5rem 4rem; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.8rem; display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: var(--teal); margin-bottom: 2rem; }
+    .section-title em { font-style: italic; color: var(--coral); }
+    .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+    .resource-card { background: white; border-radius: 20px; padding: 1.8rem; box-shadow: 0 2px 20px rgba(13,59,56,0.06); transition: transform 0.2s; }
+    .resource-card:hover { transform: translateY(-4px); }
+    .resource-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .resource-type { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.5rem; }
+    .resource-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+    .resource-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .resource-link { font-size: 0.82rem; font-weight: 600; color: var(--coral); text-decoration: none; }
+    .resource-link:hover { text-decoration: underline; }
+    .free-tag { display: inline-block; background: #e8f4ea; color: #2a7a4a; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: 0.4rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; } .nav-links { display: none; }
+      .page-hero, .resources-main { padding-left: 2rem; padding-right: 2rem; }
+      .resources-grid { grid-template-columns: 1fr; }
+    }
+  </style><link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a><nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#faf6ef" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h2l2-4 2 8 2-4h2"/></svg></div>
+    <span class="nav-logo-text">Fluent Minds</span>
+  </a>
+  <div class="nav-links">
+<a href="daily-practice.html">Practice</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="resources.html" class="active">Resources</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html" class="nav-cta">Read Articles</a>
+  </div>
+</nav><header class="page-hero"><span class="page-tag">For friends, families & teachers</span><h1>Give every voice time</h1><p>Practical ways to make conversations more welcoming.</p></header><main class="editorial" id="main-content" tabindex="-1"><div class="editorial-grid"><article><h2>Listen to the message</h2><p>Give the speaker time to finish. Avoid completing words or sentences unless they have asked for that help. Keep natural eye contact and let the conversation continue at their pace.</p><h2>Ask what helps</h2><p>People have different preferences. Ask privately: “Is there anything I can do to make speaking here more comfortable?” Avoid unsolicited instructions to slow down, relax, or take a breath.</p><h2>In the classroom</h2><p>Discuss participation and presentation options with the student. Agree on extra time or another format when helpful, and respond to bullying promptly. Include the student in decisions rather than automatically excusing them from speaking.</p><h2>On calls and in meetings</h2><p>Leave space before taking a turn. A silent moment on the phone may mean the person is still starting a word. Ask about preferences for turn-taking and written follow-up.</p><div class="guide-note">Encouragement can focus on ideas, effort, and participation. Fluent speech does not need to be the condition for praise.</div><div class="guide-note">Educational information, not individualized treatment. Stuttering support is personal; a qualified speech-language professional can help you choose approaches that fit your needs.</div><h2>Sources & further reading</h2><p><a href="https://www.asha.org/practice-portal/clinical-topics/fluency-disorders/">ASHA: Stuttering, Cluttering, and Fluency</a><br><a href="https://www.stutteringhelp.org/6-tips-speaking-someone-who-stutters">Stuttering Foundation: Tips for listeners</a></p></article><aside class="guide-links"><strong>Keep exploring</strong><a href="daily-practice.html">Everyday practice</a><a href="supporting-someone.html">Supportive listening</a><a href="finding-support.html">Finding support</a><a href="resources.html">Downloadable worksheets</a></aside></div></main><footer style="background:#0d3b38;color:white;padding:2rem"><span>Fluent Minds · Every voice deserves to be heard.</span><a href="index.html">Back to home</a></footer></body></html>
