@@ -1,0 +1,4 @@
+.netlify/
+.openai/
+__pycache__/
+dist/

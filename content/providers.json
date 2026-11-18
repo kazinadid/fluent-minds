@@ -1,0 +1,153 @@
+[
+  {
+    "name": "CRP Savar",
+    "region": "Dhaka",
+    "address": "Chapain, Savar, Dhaka 1343",
+    "phone": "+8801730059555",
+    "display": "01730059555",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Mirpur",
+    "region": "Dhaka",
+    "address": "Plot A/5, Block A, Section 14, Mirpur, Dhaka",
+    "phone": "+8801768152922",
+    "display": "01768152922",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Chattogram — A.K. Khan Centre",
+    "region": "Chattogram",
+    "address": "Kalurghat, Mohora, Chattogram",
+    "phone": "+8801730059529",
+    "display": "01730059529",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Rajshahi — Afsar Hussain Centre",
+    "region": "Rajshahi",
+    "address": "Mahisbathan, Rajshahi Court, Rajpara",
+    "phone": "+8801730059644",
+    "display": "01730059644",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Barishal — CARSA Foundation Centre",
+    "region": "Barishal",
+    "address": "12 Gonopara, Kashipur, Barishal",
+    "phone": "+8801730059643",
+    "display": "01730059643",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Sylhet — Iskandar Shitara Centre",
+    "region": "Sylhet",
+    "address": "House 26, Main Road, Block C, Shahjalal Upashahar",
+    "phone": "+8801730059512",
+    "display": "01730059512",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Gobindapur",
+    "region": "Moulvibazar",
+    "address": "Gobindapur, Kajoldhara, Kulaura, Moulvibazar",
+    "phone": "+8801730059542",
+    "display": "01730059542",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Moulvibazar — Afsarul & Aktarul Haque Centre",
+    "region": "Moulvibazar",
+    "address": "Nitessor, Mokambazar, Giasnagar, Moulvibazar Sadar",
+    "phone": "+8801730059628",
+    "display": "01730059628",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Mymensingh — BAU Centre",
+    "region": "Mymensingh",
+    "address": "Beside Sultana Rajia Hall, Bangladesh Agricultural University",
+    "phone": "+8801730059510",
+    "display": "01730059510",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Manikganj",
+    "region": "Dhaka",
+    "address": "12 Shantanu Roy Sarani, Dashora, Manikganj",
+    "phone": "+8801730059559",
+    "display": "01730059559",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "CRP Pabna — Diabetic Shamity Centre",
+    "region": "Rajshahi",
+    "address": "Gachpara bypass intersection, Pabna 6600",
+    "phone": "+8801730059518",
+    "display": "01730059518",
+    "kind": "CRP regional service",
+    "desc": "CRP lists speech-language therapy in this area. Confirm local sessions, ages served, and stuttering experience before visiting.",
+    "url": "https://crp-bangladesh.org/crp-centers",
+    "service": "https://www.crp-bangladesh.org/therapy/speech-language-therapy-dept"
+  },
+  {
+    "name": "Evercare Dhaka — Rehabilitation",
+    "region": "Dhaka",
+    "address": "Plot 81, Block E, Bashundhara R/A, Dhaka 1229",
+    "phone": "10678",
+    "display": "10678",
+    "kind": "Hospital rehabilitation",
+    "desc": "Official rehabilitation department page lists speech therapy. Ask about your age group and stuttering-specific appointments.",
+    "url": "https://www.evercarebd.com/en/dhaka/specialities/physical-medicine-rehabilitation"
+  },
+  {
+    "name": "Evercare Dhaka — Child Development Centre",
+    "region": "Dhaka",
+    "address": "Plot 81, Block E, Bashundhara R/A, Dhaka 1229",
+    "phone": "10678",
+    "display": "10678",
+    "kind": "Children: newborn to 16 years",
+    "desc": "Lists a speech therapy and language/communication clinic. Confirm assessment criteria and appointment availability.",
+    "url": "https://www.evercarebd.com/en/dhaka/specialities/child-development-centre"
+  },
+  {
+    "name": "Square Child Development Centre",
+    "region": "Dhaka",
+    "address": "18/F Bir Uttam Qazi Nuruzzaman Sarak, West Panthapath, Dhaka 1205",
+    "phone": "10616",
+    "display": "10616",
+    "kind": "Children and families",
+    "desc": "Official CDC page lists speech therapy. Contact the hospital to confirm location, age suitability, and experience with stuttering.",
+    "url": "https://www.squarehospital.com/page/29/square-child-development-centre-%28cdc%29"
+  }
+]

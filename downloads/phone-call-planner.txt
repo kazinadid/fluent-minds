@@ -1,0 +1,21 @@
+FLUENT MINDS | Phone call planner
+
+Who I am calling and why:
+
+Reference / appointment number:
+
+Three things I need to ask:
+1.
+2.
+3.
+
+Optional opening: I stutter; please give me time to finish.
+
+Information I received:
+
+Name / department and callback details:
+
+Next step:
+
+Optional planning resource, not individual treatment. Keep personal details private on shared devices.
+https://fluent-minds.netlify.app/resources.html
